@@ -12,9 +12,9 @@ beforeEach(async () => {
   accounts = await web3.eth.getAccounts();
 
   inbox = await new web3.eth.Contract(abi)
-    .deploy({ data: bytecode, arguments: [''] // Arguments are being skipped not sure why.
-                                              //Message set to NO MESSAGE(BLANK) by "outputSelection" in 
-                                              //the compile.js file hence the blank arguments string.
+    .deploy({ data: bytecode, arguments: [''] // Arguments are being skipped.
+                                              //Message set to NO MESSAGE(BLANK) by "outputSelection" 
+                                              //in the compile.js file hence the blank arguments string.
    })
     .send({ from: accounts[0], gas: "1000000" });
 });
